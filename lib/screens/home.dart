@@ -1,5 +1,6 @@
 import 'package:Comsol/screens/raise_issue.dart';
 import 'package:flutter/material.dart';
+import 'package:Comsol/screens/vote.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -141,7 +142,7 @@ class _HomeState extends State<Home> {
             ),
             drawerButton(Icons.home, 'Home', Home()),
             drawerButton(Icons.speaker_notes, 'Raise Issue', RaiseIssue()),
-            drawerButton(Icons.ballot, 'Vote', Home()),
+            drawerButton(Icons.ballot, 'Vote', Vote()),
             drawerButton(Icons.people, 'Group', Home()),
           ],
         ),
