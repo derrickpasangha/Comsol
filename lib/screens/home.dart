@@ -1,3 +1,4 @@
+import 'package:Comsol/screens/raise_issue.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatefulWidget {
@@ -6,7 +7,7 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-  Widget drawerButton(IconData icon, String label) {
+  Widget drawerButton(IconData icon, String label, Widget widget) {
     return Container(
       margin: EdgeInsets.only(
         top: MediaQuery.of(context).size.height * 0.01,
@@ -15,7 +16,14 @@ class _HomeState extends State<Home> {
         minWidth: double.infinity,
         padding: EdgeInsets.all(MediaQuery.of(context).size.width * 0.05),
         color: Colors.blue[300],
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => widget,
+            ),
+          );
+        },
         icon: Icon(
           icon,
           color: Colors.white,
@@ -131,10 +139,10 @@ class _HomeState extends State<Home> {
               height: 150,
               width: double.infinity,
             ),
-            drawerButton(Icons.home, 'Home'),
-            drawerButton(Icons.speaker_notes, 'Raise Issue'),
-            drawerButton(Icons.ballot, 'Vote'),
-            drawerButton(Icons.people, 'Group'),
+            drawerButton(Icons.home, 'Home', Home()),
+            drawerButton(Icons.speaker_notes, 'Raise Issue', RaiseIssue()),
+            drawerButton(Icons.ballot, 'Vote', Home()),
+            drawerButton(Icons.people, 'Group', Home()),
           ],
         ),
       ),
