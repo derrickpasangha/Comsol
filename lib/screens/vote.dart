@@ -14,7 +14,7 @@ class _VoteState extends State<Vote> {
       List<Widget> images = [];
       urls.forEach((url) {
         images.add(Container(
-          height: MediaQuery.of(context).size.height * 0.18,
+          height: MediaQuery.of(context).size.height * 0.26,
           margin: EdgeInsets.all(MediaQuery.of(context).size.width * 0.01),
           child: Image.network(
             url,
@@ -37,19 +37,19 @@ class _VoteState extends State<Vote> {
         left: MediaQuery.of(context).size.width * 0.05,
         right: MediaQuery.of(context).size.width * 0.05,
       ),
+      decoration: BoxDecoration(
+        color: Colors.grey[300],
+      ),
       child: Column(
         children: [
           Container(
-            height: MediaQuery.of(context).size.height * 0.2,
+            height: MediaQuery.of(context).size.height * 0.28,
             child: ListView(
               scrollDirection: Axis.horizontal,
               children: generateImages(),
             ),
           ),
           Container(
-            decoration: BoxDecoration(
-              color: Colors.white30,
-            ),
             margin: EdgeInsets.only(
               top: MediaQuery.of(context).size.height * 0.015,
               bottom: MediaQuery.of(context).size.height * 0.015,
@@ -57,7 +57,7 @@ class _VoteState extends State<Vote> {
             child: Text(
               description,
               style: TextStyle(
-                fontSize: MediaQuery.of(context).size.height * 0.028,
+                fontSize: MediaQuery.of(context).size.height * 0.025,
               ),
             ),
           ),
